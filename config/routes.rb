@@ -30,20 +30,6 @@ Xlogger::Application.routes.draw do
   root :to => 'pages#home' 
 
 
-  get "pages/contact"
-
-  resources :workouts
-
-  resources :warmups
-
-  resources :templates
-
-  resources :exercises
-
-  resources :entries
-
-  resources :users
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
