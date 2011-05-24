@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :correct_user, :only => [:edit, :update, :destroy]
   # "Edit" and "Account Management" are the same.
 
+
   # GET /users
   # GET /users.xml
   def index
@@ -36,18 +37,11 @@ class UsersController < ApplicationController
    #   format.html # new.html.erb
    #   format.xml  { render :xml => @user }
    # end
-    @user = User.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @user }
-    end
   end
 
   # GET /users/1/edit
   def edit
     @title = "Edit user"
-    @user = User.find(params[:id])
   end
 
   # POST /users
@@ -58,10 +52,6 @@ class UsersController < ApplicationController
       if @user.save
         sign_in @user
         format.html { redirect_to(@user, :notice => 'Registration successful!') }
-
-    respond_to do |format|
-      if @user.save
-        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
         format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
@@ -81,9 +71,6 @@ class UsersController < ApplicationController
         format.xml  { head :ok }
       else
         @title = "Edit user"
-        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
-        format.xml  { head :ok }
-      else
         format.html { render :action => "edit" }
         format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
@@ -115,9 +102,4 @@ class UsersController < ApplicationController
     end
 
 
-
-      format.html { redirect_to(users_url) }
-      format.xml  { head :ok }
-    end
-  end
 end

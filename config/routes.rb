@@ -1,20 +1,23 @@
 Xlogger::Application.routes.draw do
   get "pages/home"
   get "pages/contact"
-  get "pages/about"
-  get "pages/help"
-  
-  get "calendar/index"
-
-  resources :sessions, :only => [:new, :create, :destroy]
-  resources :events
   resources :workouts
+    resources :events
   resources :warmups
   resources :templates
   resources :exercises
   resources :entries
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
 
+
+  get "calendar/index"
+
+
+  get "pages/home"
+  get "pages/contact"
+  get "pages/about"
+  get "pages/help"
 
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
@@ -28,8 +31,6 @@ Xlogger::Application.routes.draw do
 
 
   root :to => 'pages#home' 
-
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
