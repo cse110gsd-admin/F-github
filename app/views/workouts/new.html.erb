@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <%= form_for(@workout) do |f| %>
   <% if @workout.errors.any? %>
     <div id="error_explanation">
@@ -21,10 +20,9 @@
     <%= f.submit %>
   </div>
 <% end %>
-=======
+
 <h1>New workout</h1>
 
 <%= render 'form' %>
 <%= @workout.template_id %>
 <%= link_to 'Back', workouts_path %>
->>>>>>> 26757e2a401091b80e8352c264b191333628db9b

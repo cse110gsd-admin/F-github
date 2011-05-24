@@ -63,7 +63,6 @@ ActiveRecord::Schema.define(:version => 20110523051931) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
  create_table "events" :force => true do |t|
     t.string "title"
     t.datetime "starts_at"
@@ -73,6 +72,4 @@ ActiveRecord::Schema.define(:version => 20110523051931) do
 
 
 
-=======
->>>>>>> 26757e2a401091b80e8352c264b191333628db9b
 end
