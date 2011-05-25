@@ -20,6 +20,32 @@ Fields:		date
 		warmup_id
 
 
+Basic Usage:
+
+Creating a user
+@user = User.new(:name => "Test", :email => "test@test.com", :password =>
+	"password")
+
+Save a user to the db
+@user.save
+
+Creating an event
+@date = Date.new(yyyy, mm, dd)
+@entry = @user.entries.create(:date => @date)
+@entry.save
+
+How to retrieve all wods from the system i.e Fran, Angie, Barbara
+@crossfit_templates =  Template.where ( :user_id => 
+	User.find_by_name ( "crossfit" ) )
+
+How to retrieve all user specific saved workouts
+@user_templates = Template.where ( :user_id => @current_user.id )
+
+To combine both system templates and user templates
+@templates = @user_templates + @crossfit_templates
+
+
+@
 
 
 == Welcome to Rails
