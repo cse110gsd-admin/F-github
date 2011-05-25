@@ -2,7 +2,23 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.xml
   def index
-    @entries = Entry.all
+    #@entries = Entry.all
+    unless params[:user_id].nil?
+      @user = User.find(params[:user_id])
+    end
+    if @user.nil? 
+      @entries = Entry.all
+      #if @entries.nil?
+      #  @entries = Array.new
+      #  @entries[0] = Entry.create(:user_id => )
+      #end
+    else
+      @entries = Entry.where (:user_id => @user.id)
+      #if @entries.nil?
+      #  @entries = Array.new
+      #  @entries[0] = Entry.create(:user_id => 1) 
+      #end
+    end
 
     respond_to do |format|
       format.html # index.html.erb
