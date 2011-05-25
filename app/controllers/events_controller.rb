@@ -15,13 +15,13 @@ class EventsController < ApplicationController
       @user = User.find(params[:user_id])
     end
     if @user.nil? 
-      @events = Events.all
+      @events = Event.all
       #if @entries.nil?
       #  @entries = Array.new
       #  @entries[0] = Entry.create(:user_id => )
       #end
     else
-      @events = Events.where (:user_id => @user.id)
+      @events = Event.where (:user_id => @user.id)
       #if @entries.nil?
       #  @entries = Array.new
       #  @entries[0] = Entry.create(:user_id => 1) 
