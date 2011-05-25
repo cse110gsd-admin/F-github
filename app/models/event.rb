@@ -11,7 +11,6 @@ class Event < ActiveRecord::Base
   # http://arshaw.com/fullcalendar/docs/event_data/Event_Object/
   def as_json(options = {})
     {
-      :user_id => current_user.id,
       :id => self.id,
       :title => self.title,
       :description => self.description || "",
