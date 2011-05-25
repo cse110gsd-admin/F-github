@@ -24,7 +24,7 @@ class EntriesController < ApplicationController
   # GET /entries/new
   # GET /entries/new.xml
   def new
-    @entry = Entry.new
+    @entry = Entry.new(:user_id => params[:user_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +40,10 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    @entry = Entry.new(params[:entry])
+    @user = current_user
+    @entry = User.find(params[:user_id]).entries.create(:user_id => 
+                                                        params[:user_id])
+    #@entry = Entry.new(params[:entry])
 
     respond_to do |format|
       if @entry.save
