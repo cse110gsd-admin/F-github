@@ -3,6 +3,5 @@ class Entry < ActiveRecord::Base
 
   has_many :workouts, :dependent => :destroy
   has_many :warmups,  :dependent => :destroy
-  has_one  :event, 	:dependent => :destroy
   validates_presence_of :date
 end
