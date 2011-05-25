@@ -10,7 +10,7 @@ class EventsController < ApplicationController
   #  @events = Event.scoped  
   #  @events = @events.after(params['start']) if (params['start'])
   #  @events = @events.before(params['end']) if (params['end'])
-   @events = current_user.entries.events
+   @events = current_user.entries.event
     
     respond_to do |format|
       format.html # index.html.erb
