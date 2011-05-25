@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(:version => 20110523051931) do
     t.datetime "updated_at"
   end
 
+  create_table "events", :force => true do |t|
+    t.string   "title"
+    t.datetime "starts_at"
+    t.datetime "ends_at"
+    t.boolean  "all_day"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "exercises", :force => true do |t|
     t.string   "name"
     t.integer  "reps"

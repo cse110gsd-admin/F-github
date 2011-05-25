@@ -56,10 +56,9 @@ class EntriesController < ApplicationController
   # POST /entries
   # POST /entries.xml
   def create
-    @user = current_user
-    @entry = User.find(params[:user_id]).entries.create(:user_id => 
-                                                        params[:user_id])
-    #@entry = Entry.new(params[:entry])
+    #@user = current_user
+    #@entry = User.find(params[:user_id]).entries.create(:user_id => params[:user_id])
+    @entry = Entry.new(params[:entry])
 
     respond_to do |format|
       if @entry.save
