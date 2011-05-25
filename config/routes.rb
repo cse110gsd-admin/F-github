@@ -12,6 +12,7 @@ Xlogger::Application.routes.draw do |map|
   resources :exercises
   resources :entries
   resources :users
+  resources :events
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "calendar/index"
