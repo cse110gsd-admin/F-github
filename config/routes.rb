@@ -15,6 +15,7 @@ Xlogger::Application.routes.draw do |map|
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "calendar/index"
+  get "templates/index"  ### < maybe
 
   get "pages/home"
   get "pages/contact"
