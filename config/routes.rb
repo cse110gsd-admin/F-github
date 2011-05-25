@@ -9,7 +9,7 @@ Xlogger::Application.routes.draw do |map|
   #map.connect ':controller/:action/:id', :controller => 'pages'
   resources :workouts
   resources :warmups
-  resource  :templates
+  resources :templates
   resources :exercises
   resources :entries
   resources :users
