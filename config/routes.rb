@@ -14,6 +14,14 @@ Xlogger::Application.routes.draw do |map|
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
 
+  get "calendar/index"
+
+  get "pages/home"
+  get "pages/contact"
+  get "pages/about"
+  get "pages/help"
+  
+
   map.signup 'signup', :controller => 'users', :action => 'new'
   map.signin 'signin', :controller => 'sessions', :action => 'new'
   map.signout 'signout', :controller => 'sessions', :action => 'destroy'
