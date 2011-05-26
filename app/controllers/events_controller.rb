@@ -28,8 +28,6 @@ class EventsController < ApplicationController
       #end
     end
 
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
