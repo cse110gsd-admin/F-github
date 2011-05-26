@@ -2278,3 +2278,298 @@ Rendered layouts/_header.html.erb (77.1ms)
 Rendered layouts/_footer.html.erb (0.9ms)
 Rendered templates/new.html.erb within layouts/application (100.8ms)
 Completed 200 OK in 160ms (Views: 144.7ms | ActiveRecord: 0.5ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/templates/new" for 127.0.0.1 at 2011-05-25 20:33:23 -0700
+  Processing by TemplatesController#new as HTML
+Rendered templates/_form.html.erb (91.2ms)
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (132.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/new.html.erb within layouts/application (239.1ms)
+Completed 200 OK in 299ms (Views: 244.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/templates/" for 127.0.0.1 at 2011-05-25 20:33:46 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[36mTemplate Load (0.3ms)[0m  [1mSELECT "templates".* FROM "templates"[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (75.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (87.0ms)
+Completed 200 OK in 105ms (Views: 92.0ms | ActiveRecord: 0.8ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:38:31 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (173.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (185.7ms)
+Completed 200 OK in 192ms (Views: 190.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2011-05-25 20:38:43 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[36mTemplate Load (0.2ms)[0m  [1mSELECT "templates".* FROM "templates"[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (76.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 395ms (Views: 93.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/templates/new" for 127.0.0.1 at 2011-05-25 20:38:49 -0700
+  Processing by TemplatesController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered templates/_form.html.erb (264.6ms)
+Rendered layouts/_stylesheets.html.erb (2.8ms)
+Rendered layouts/_header.html.erb (2.2ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered templates/new.html.erb within layouts/application (348.9ms)
+Completed 200 OK in 440ms (Views: 354.1ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/templates" for 127.0.0.1 at 2011-05-25 20:39:46 -0700
+  Processing by TemplatesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vLuozKEnu3DT32qBkJclUrhQvwwkiWGN7V/y/pDu3s=", "template"=>{"name"=>"CrazyWorkout", "description"=>"here is my crazy version of fran", "user_id"=>"1"}, "commit"=>"Create Template"}
+  [1m[35mAREL (1.7ms)[0m  INSERT INTO "templates" ("name", "description", "user_id", "created_at", "updated_at") VALUES ('CrazyWorkout', 'here is my crazy version of fran', 1, '2011-05-26 03:39:46.389491', '2011-05-26 03:39:46.389491')
+Redirected to http://localhost:3000/templates/1
+Completed 302 Found in 307ms
+
+
+Started GET "/templates/1" for 127.0.0.1 at 2011-05-25 20:39:46 -0700
+  Processing by TemplatesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTemplate Load (0.2ms)[0m  [1mSELECT "templates".* FROM "templates" WHERE "templates"."id" = 1 LIMIT 1[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (83.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/show.html.erb within layouts/application (107.5ms)
+Completed 200 OK in 206ms (Views: 129.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 20:40:07 -0700
+  Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (0.6ms)[0m  [1mSELECT "workouts".* FROM "workouts"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (45.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered workouts/index.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 103ms (Views: 61.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2011-05-25 20:40:13 -0700
+  Processing by WorkoutsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'crossfit' LIMIT 1[0m
+Completed   in 58ms
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/workouts_controller.rb:30:in `new'
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (41.0ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (88.6ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2011-05-25 20:42:13 -0700
+  Processing by WorkoutsController#new as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."name" = 'crossfit' LIMIT 1
+Completed   in 184ms
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/workouts_controller.rb:30:in `new'
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.1ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.3ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 20:42:19 -0700
+  Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (0.2ms)[0m  [1mSELECT "workouts".* FROM "workouts"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (46.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered workouts/index.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 107ms (Views: 63.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2011-05-25 20:42:27 -0700
+  Processing by WorkoutsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'crossfit' LIMIT 1[0m
+Completed   in 58ms
+
+RuntimeError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id):
+  app/controllers/workouts_controller.rb:30:in `new'
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (39.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (48.3ms)
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2011-05-25 20:43:03 -0700
+  Processing by WorkoutsController#new as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+  [1m[36mTemplate Load (0.4ms)[0m  [1mSELECT "templates".* FROM "templates" WHERE "templates"."user_id" = 1 ORDER BY name[0m
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+Rendered layouts/_header.html.erb (1.8ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered workouts/new.html.erb within layouts/application (105.4ms)
+Completed 200 OK in 308ms (Views: 211.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/calendar/index" for 127.0.0.1 at 2011-05-25 20:46:03 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (46.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered calendar/index.html.erb within layouts/application (57.7ms)
+Completed 200 OK in 65ms (Views: 64.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306381564260" for 127.0.0.1 at 2011-05-25 20:46:04 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.1ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2011-05-25 20:46:19 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+
+
+Started GET "/calendar/index" for 127.0.0.1 at 2011-05-25 20:46:27 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (78.1ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered calendar/index.html.erb within layouts/application (88.8ms)
+Completed 200 OK in 94ms (Views: 93.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306381588102" for 127.0.0.1 at 2011-05-25 20:46:28 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:46:29 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (78.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 95ms (Views: 94.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2011-05-25 20:46:35 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (49.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered calendar/index.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 68ms (Views: 66.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306381596440" for 127.0.0.1 at 2011-05-25 20:46:36 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.2ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started GET "/events/new" for 127.0.0.1 at 2011-05-25 20:46:40 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (51.8ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.3ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (62.0ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2011-05-25 20:46:44 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (47.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered calendar/index.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 64ms (Views: 63.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306381604769" for 127.0.0.1 at 2011-05-25 20:46:44 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
