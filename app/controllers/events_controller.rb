@@ -50,7 +50,9 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
+    
     @event = Event.new
+    
     @templates = Template.where(:user_id => current_user.id).order(:name)
     respond_to do |format|
       format.html # new.html.erb
