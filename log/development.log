@@ -1343,3 +1343,938 @@ Rendered layouts/_header.html.erb (19.2ms)
 Rendered layouts/_footer.html.erb (0.9ms)
 Rendered pages/home.html.erb within layouts/application (29.6ms)
 Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateEvents (20110409023947)
+Migrating to CreateUsers (20110523051026)
+Migrating to CreateEntries (20110523051324)
+Migrating to CreateExercises (20110523051508)
+Migrating to CreateTemplates (20110523051540)
+Migrating to CreateWarmups (20110523051638)
+Migrating to CreateWorkouts (20110523051931)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("entries")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("exercises")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("templates")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("warmups")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("workouts")
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:27:57 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.3ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (110.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:28:05 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (725.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (865.0ms)
+Completed 200 OK in 874ms (Views: 872.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2011-05-25 19:28:50 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (3.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (162.0ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered calendar/index.html.erb within layouts/application (283.6ms)
+Completed 200 OK in 412ms (Views: 411.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306376940715" for 127.0.0.1 at 2011-05-25 19:29:00 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (52.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:29:19 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (48.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (60.4ms)
+Completed 200 OK in 66ms (Views: 65.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2011-05-25 19:29:23 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (65.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered calendar/index.html.erb within layouts/application (76.7ms)
+Completed 200 OK in 83ms (Views: 81.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306376964201" for 127.0.0.1 at 2011-05-25 19:29:24 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:29:31 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (72.1ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 88ms (Views: 87.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/calendar" for 127.0.0.1 at 2011-05-25 19:29:34 -0700
+  Processing by CalendarController#index as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (57.8ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered calendar/index.html.erb within layouts/application (69.1ms)
+Completed 200 OK in 75ms (Views: 74.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/events?start=1304233200&end=1307862000&_=1306376975220" for 127.0.0.1 at 2011-05-25 19:29:35 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:29:38 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (39.5ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 56ms (Views: 55.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:30:11 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.0ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.1ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:30:15 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:30:32 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:30:35 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.4ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:30:42 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-05-25 19:30:51 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.5ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2011-05-25 19:30:59 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:16: syntax error, unexpected tASSOC, expecting ')'
+      @entries = Entry.where (:user_id => @user.id)
+                                         ^
+/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:16: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:101: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-05-25 19:31:06 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (19.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (38.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered users/index.html.erb within layouts/application (98.5ms)
+Completed 200 OK in 170ms (Views: 106.2ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:31:23 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (71.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 88ms (Views: 87.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/workouts/edit" for 127.0.0.1 at 2011-05-25 19:34:51 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.8ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/workout/edit" for 127.0.0.1 at 2011-05-25 19:34:55 -0700
+
+ActionController::RoutingError (No route matches "/workout/edit"):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:35:03 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.3ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:35:07 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:35:10 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (68.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (79.5ms)
+Completed 200 OK in 85ms (Views: 84.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-05-25 19:35:13 -0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (68.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered sessions/new.html.erb within layouts/application (373.6ms)
+Completed 200 OK in 380ms (Views: 379.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-25 19:35:36 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vLuozKEnu3DT32qBkJclUrhQvwwkiWGN7V/y/pDu3s=", "session"=>{"email"=>"alaska@us.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'alaska@us.com' LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered sessions/new.html.erb within layouts/application (45.0ms)
+Completed 200 OK in 80ms (Views: 49.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-25 19:35:50 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (40.9ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (7.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/new.html.erb within layouts/application (61.5ms)
+Completed 200 OK in 93ms (Views: 67.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-05-25 19:36:16 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vLuozKEnu3DT32qBkJclUrhQvwwkiWGN7V/y/pDu3s=", "user"=>{"name"=>"moose", "email"=>"alaska@us.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."name" = 'moose') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('alaska@us.com')) LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "users" ("name", "email", "password", "encrypted_password", "salt", "created_at", "updated_at") VALUES ('moose', 'alaska@us.com', NULL, '1115d82e163c5128315aa61f6566aa8ee5d4ef24fe35d99be2020140de2f3b95', '28e4a762f28bf4f51ae14ae29b53ca960e01a844ba4be57d751e76c4362d4650', '2011-05-26 02:36:16.881645', '2011-05-26 02:36:16.881645')[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 623ms
+
+
+Started GET "/users/2" for 127.0.0.1 at 2011-05-25 19:36:17 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/show.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 56ms (Views: 20.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:36:37 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (75.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 92ms (Views: 90.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:36:45 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-05-25 19:38:22 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (8.1ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/index.html.erb within layouts/application (33.0ms)
+Completed 200 OK in 63ms (Views: 37.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2011-05-25 19:38:30 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:16: syntax error, unexpected tASSOC, expecting ')'
+      @entries = Entry.where (:user_id => @user.id)
+                                         ^
+/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:16: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/entries_controller.rb:101: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.4ms)
+
+
+Started GET "/envents" for 127.0.0.1 at 2011-05-25 19:38:34 -0700
+
+ActionController::RoutingError (No route matches "/envents"):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/events" for 127.0.0.1 at 2011-05-25 19:38:50 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected tASSOC, expecting ')'
+      @events = Event.where (:user_id => @user.id)
+                                        ^
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:24: syntax error, unexpected ')', expecting keyword_end
+/Users/azazelahh/Projects/F-github/app/controllers/events_controller.rb:115: syntax error, unexpected $end, expecting keyword_end):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2011-05-25 19:39:01 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[36mTemplate Load (1.0ms)[0m  [1mSELECT "templates".* FROM "templates"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (46.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (102.2ms)
+Completed 200 OK in 201ms (Views: 108.1ms | ActiveRecord: 1.5ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+  [1m[36mSQL (0.4ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "entries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "date" date, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.7ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "starts_at" datetime, "ends_at" datetime, "all_day" boolean, "description" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.0ms)[0m  [1mCREATE TABLE "exercises" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "reps" integer, "weight" integer, "exerciseable_id" integer, "exerciseable_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.9ms)[0m  [1mCREATE TABLE "templates" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "password" varchar(255), "encrypted_password" varchar(255), "salt" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.9ms)[0m  [1mCREATE TABLE "warmups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "entry_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (2.1ms)[0m  [1mCREATE TABLE "workouts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" varchar(255), "entry_id" integer, "template_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (14.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35mSQL (1.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110523051931')
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110409023947')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110523051026')
+  [1m[36mSQL (2.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110523051324')[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110523051508')
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20110523051540')[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20110523051638')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:39:58 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (189.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (202.3ms)
+Completed 200 OK in 210ms (Views: 208.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:40:03 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (26.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (37.0ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:40:07 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:40:09 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (70.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (81.7ms)
+Completed 200 OK in 87ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2011-05-25 19:40:23 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[35mTemplate Load (0.6ms)[0m  SELECT "templates".* FROM "templates"
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (70.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 105ms (Views: 86.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:40:35 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/workouts/new" for 127.0.0.1 at 2011-05-25 19:40:56 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.0ms)
+
+
+Started GET "/workouts/" for 127.0.0.1 at 2011-05-25 19:41:00 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.1ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:43:42 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (162.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (174.2ms)
+Completed 200 OK in 181ms (Views: 179.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:43:47 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.9ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (35.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:43:52 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (40.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (51.2ms)
+Completed 200 OK in 57ms (Views: 56.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 19:43:55 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (32.1ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (41.1ms)
+
+
+Started GET "/workouts/" for 127.0.0.1 at 2011-05-25 19:44:00 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.2ms)
+
+
+Started GET "/workouts/" for 127.0.0.1 at 2011-05-25 19:44:03 -0700
+
+SyntaxError (/Users/azazelahh/Projects/F-github/app/controllers/workouts_controller.rb:53: formal argument cannot be an instance variable
+        @exercises.each do |@exercise|
+                                     ^):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.7ms)
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 19:44:10 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (71.0ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (81.8ms)
+Completed 200 OK in 87ms (Views: 86.5ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:11:34 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (161.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (173.2ms)
+Completed 200 OK in 180ms (Views: 178.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 20:11:38 -0700
+  Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (20.8ms)[0m  [1mSELECT "workouts".* FROM "workouts"[0m
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (45.1ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered workouts/index.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 121ms (Views: 65.5ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/workouts" for 127.0.0.1 at 2011-05-25 20:11:41 -0700
+  Processing by WorkoutsController#index as HTML
+  [1m[36mWorkout Load (0.5ms)[0m  [1mSELECT "workouts".* FROM "workouts"[0m
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (114.2ms)
+Rendered layouts/_footer.html.erb (31.6ms)
+Rendered workouts/index.html.erb within layouts/application (156.8ms)
+Completed 200 OK in 175ms (Views: 161.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/warmaups" for 127.0.0.1 at 2011-05-25 20:12:18 -0700
+
+ActionController::RoutingError (No route matches "/warmaups"):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/warmups" for 127.0.0.1 at 2011-05-25 20:13:06 -0700
+  Processing by WarmupsController#index as HTML
+  [1m[36mWarmup Load (0.5ms)[0m  [1mSELECT "warmups".* FROM "warmups"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (110.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered warmups/index.html.erb within layouts/application (153.6ms)
+Completed 200 OK in 193ms (Views: 159.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-05-25 20:13:17 -0700
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (12.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/index.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 81ms (Views: 28.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/exercise" for 127.0.0.1 at 2011-05-25 20:13:27 -0700
+
+ActionController::RoutingError (No route matches "/exercise"):
+  
+
+Rendered /Users/azazelahh/.rvm/gems/ruby-1.9.2-p180@rails3tutorial/gems/actionpack-3.0.7/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/exercises" for 127.0.0.1 at 2011-05-25 20:13:30 -0700
+  Processing by ExercisesController#index as HTML
+  [1m[36mExercise Load (15.1ms)[0m  [1mSELECT "exercises".* FROM "exercises"[0m
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (69.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered exercises/index.html.erb within layouts/application (82.7ms)
+Completed 200 OK in 147ms (Views: 90.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2011-05-25 20:13:43 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[36mTemplate Load (0.5ms)[0m  [1mSELECT "templates".* FROM "templates"[0m
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (38.2ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (78.8ms)
+Completed 200 OK in 97ms (Views: 84.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/templates/new" for 127.0.0.1 at 2011-05-25 20:13:58 -0700
+  Processing by TemplatesController#new as HTML
+Rendered templates/_form.html.erb (303.4ms)
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (39.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/new.html.erb within layouts/application (357.3ms)
+Completed 200 OK in 454ms (Views: 409.2ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: You are using the old router DSL which will be removed in Rails 3.1. Please check how to update your routes file at: http://www.engineyard.com/blog/2010/the-lowdown-on-routes-in-rails-3/. (called from <top (required)> at /Users/azazelahh/Projects/F-github/config/routes.rb:1)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:30:16 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (162.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (174.5ms)
+Completed 200 OK in 181ms (Views: 179.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-05-25 20:30:20 -0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (40.8ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered sessions/new.html.erb within layouts/application (164.5ms)
+Completed 200 OK in 170ms (Views: 169.7ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2011-05-25 20:30:37 -0700
+  Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vLuozKEnu3DT32qBkJclUrhQvwwkiWGN7V/y/pDu3s=", "session"=>{"email"=>"alaska@us.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."email" = 'alaska@us.com' LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.3ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered sessions/new.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 51ms (Views: 19.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2011-05-25 20:30:53 -0700
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (12.9ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 84ms (Views: 29.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:31:01 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (69.4ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (80.0ms)
+Completed 200 OK in 85ms (Views: 84.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2011-05-25 20:31:08 -0700
+  Processing by SessionsController#new as HTML
+Rendered layouts/_stylesheets.html.erb (1.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1[0m
+Rendered layouts/_header.html.erb (67.7ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered sessions/new.html.erb within layouts/application (79.8ms)
+Completed 200 OK in 85ms (Views: 84.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2011-05-25 20:31:12 -0700
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (14.0ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 2 LIMIT 1
+Rendered layouts/_header.html.erb (7.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered users/new.html.erb within layouts/application (73.7ms)
+Completed 200 OK in 133ms (Views: 107.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2011-05-25 20:31:28 -0700
+  Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8vLuozKEnu3DT32qBkJclUrhQvwwkiWGN7V/y/pDu3s=", "user"=>{"name"=>"moose", "email"=>"alaska@us.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."name" = 'moose') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE (LOWER("users"."email") = LOWER('alaska@us.com')) LIMIT 1
+  [1m[36mAREL (55.8ms)[0m  [1mINSERT INTO "users" ("name", "email", "password", "encrypted_password", "salt", "created_at", "updated_at") VALUES ('moose', 'alaska@us.com', NULL, '49aee07fe4bbf0e819c99acc04505e531c7d83255704f3fb73d45def086405bf', 'eabbc1351234bb5ec637ffaac423afc3592619061ed8843bc0cb59fb677b8062', '2011-05-26 03:31:29.387899', '2011-05-26 03:31:29.387899')[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 520ms
+
+
+Started GET "/users/1" for 127.0.0.1 at 2011-05-25 20:31:29 -0700
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (0.8ms)
+Rendered users/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 89ms (Views: 20.1ms | ActiveRecord: 56.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-05-25 20:31:34 -0700
+  Processing by PagesController#home as HTML
+Rendered layouts/_stylesheets.html.erb (1.3ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (92.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (105.8ms)
+Completed 200 OK in 113ms (Views: 111.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/templates" for 127.0.0.1 at 2011-05-25 20:31:44 -0700
+  Processing by TemplatesController#index as HTML
+  [1m[36mTemplate Load (37.3ms)[0m  [1mSELECT "templates".* FROM "templates"[0m
+Rendered layouts/_stylesheets.html.erb (1.4ms)
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1
+Rendered layouts/_header.html.erb (46.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/index.html.erb within layouts/application (59.6ms)
+Completed 200 OK in 211ms (Views: 66.4ms | ActiveRecord: 37.8ms)
+
+
+Started GET "/templates/new" for 127.0.0.1 at 2011-05-25 20:31:49 -0700
+  Processing by TemplatesController#new as HTML
+Rendered templates/_form.html.erb (10.6ms)
+Rendered layouts/_stylesheets.html.erb (1.2ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (77.1ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered templates/new.html.erb within layouts/application (100.8ms)
+Completed 200 OK in 160ms (Views: 144.7ms | ActiveRecord: 0.5ms)

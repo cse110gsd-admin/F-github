@@ -50,10 +50,10 @@ class WorkoutsController < ApplicationController
           :description => @template.description }
         @workout.save
         @exercises = @template.exercises
-        @exercises.each do |@exercise|
-          @temp = @workout.exercises.create(:name => @exercise.name,
-                                    :reps => @exercise.reps,
-                                    :weight => @exercise.weight )
+        @exercises.each do |exercise|
+          @temp = @workout.exercises.create(:name => exercise.name,
+                                    :reps => exercise.reps,
+                                    :weight => exercise.weight )
           @temp.save
         end
       end
