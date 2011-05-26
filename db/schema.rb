@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110526141254) do
+ActiveRecord::Schema.define(:version => 20110526085610) do
 
   create_table "entries", :force => true do |t|
     t.date     "date"
@@ -20,16 +20,14 @@ ActiveRecord::Schema.define(:version => 20110526141254) do
   end
 
   create_table "events", :force => true do |t|
-    t.integer  "user_id"
     t.string   "title"
     t.datetime "starts_at"
     t.datetime "ends_at"
     t.boolean  "all_day"
     t.text     "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.time     "time"
-    t.integer  "rounds"
   end
 
   create_table "exercises", :force => true do |t|
