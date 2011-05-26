@@ -7,14 +7,17 @@ Xlogger::Application.routes.draw do |map|
 
   # sets up a default map
   #map.connect ':controller/:action/:id', :controller => 'pages'
+  resources :workouts
   resources :warmups
-  resource  :templates
+  resources :templates
   resources :exercises
   resources :entries
   resources :users
+  resources :events
   resources :sessions, :only => [:new, :create, :destroy]
 
   get "calendar/index"
+  get "templates/index"  ### < maybe
 
   get "pages/home"
   get "pages/contact"

@@ -24,7 +24,7 @@ class TemplatesController < ApplicationController
   # GET /templates/new
   # GET /templates/new.xml
   def new
-    @template = Template.new
+    @template = Template.new(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb

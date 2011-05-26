@@ -21,7 +21,7 @@
   </div>
   <div class="field">
     <%= f.label :ends_at %><br />
-    <%= f.datetime_select :ends_at %>
+    <%= f.datetime_select :ends_at, :default => 1.minutes.from_now %>
   </div>
   <div class="field">
     <%= f.label :all_day %><br />
@@ -30,6 +30,10 @@
   <div class="field">
     <%= f.label :description %><br />
     <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
   </div>
   <div class="actions">
     <%= f.submit %>
