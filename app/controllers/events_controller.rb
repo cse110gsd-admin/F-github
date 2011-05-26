@@ -51,6 +51,7 @@ class EventsController < ApplicationController
   # GET /events/new.xml
   def new
     @event = Event.new
+    @event.user_id = current_user.id
 
     respond_to do |format|
       format.html # new.html.erb
