@@ -7,26 +7,26 @@ class EventsController < ApplicationController
     # appropriate month/week/day.  It should be possiblt to change
     # this to be starts_at and ends_at to match rails conventions.
     # I'll eventually do that to make the demo a little cleaner.
-  #  @events = Event.scoped  
-  #  @events = @events.after(params['start']) if (params['start'])
-  #  @events = @events.before(params['end']) if (params['end'])
+    @events = Event.scoped  
+    @events = @events.after(params['start']) if (params['start'])
+    @events = @events.before(params['end']) if (params['end'])
     
-    unless params[:user_id].nil?
-      @user = User.find(params[:user_id])
-    end
-    if @user.nil? 
-      @events = Event.all
+   # unless params[:user_id].nil?
+   #   @user = User.find(params[:user_id])
+   # end
+   # if @user.nil? 
+   #   @events = Event.all
       #if @entries.nil?
       #  @entries = Array.new
       #  @entries[0] = Entry.create(:user_id => )
       #end
-    else
-      @events = Event.where (:user_id => @user.id)
+   # else
+   #   @events = Event.where (:user_id => @user.id)
       #if @entries.nil?
       #  @entries = Array.new
       #  @entries[0] = Entry.create(:user_id => 1) 
       #end
-    end
+   # end
 
     respond_to do |format|
       format.html # index.html.erb
