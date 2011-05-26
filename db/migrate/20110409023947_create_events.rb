@@ -13,7 +13,6 @@ class CreateEvents < ActiveRecord::Migration
     change_table :events do |t|
       t.add_column, :user_id, :integer
     end
-
   end
 
   def self.down
