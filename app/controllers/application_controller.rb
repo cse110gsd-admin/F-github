@@ -7,6 +7,15 @@ class ApplicationController < ActionController::Base
   before_filter :correct_safari_and_ie_accept_headers
   after_filter :set_xhr_flash
 
+  def current_user
+    User.find(session[:user_id])
+  rescue ActiveRecord::RecordNotFound
+    user = User.create
+    session[:user_id] =user.id
+    user
+  end
+
+
   def set_xhr_flash
     flash.discard if request.xhr?
   end
