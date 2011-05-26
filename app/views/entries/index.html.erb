@@ -10,13 +10,15 @@
   </tr>
 
 <% @entries.each do |entry| %>
-  <tr>
-    <td><%= entry.date %></td>
-    <td><%= entry.user_id %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <% if entry.user_id == @user.id  %>
+    <tr>
+      <td><%= entry.date %></td>
+      <td><%= entry.user_id %></td>
+      <td><%= link_to 'Show', entry %></td>
+      <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+      <td><%= link_to 'Destroy', entry, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
 <% end %>
 </table>
 
