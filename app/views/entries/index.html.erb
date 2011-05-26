@@ -10,7 +10,7 @@
   </tr>
 
 <% @entries.each do |entry| %>
-  <% if entry.user_id == @user.id  %>
+  <% if entry.user_id == current_user.id  %>
     <tr>
       <td><%= entry.date %></td>
       <td><%= entry.user_id %></td>
