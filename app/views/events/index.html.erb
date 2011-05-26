@@ -7,7 +7,7 @@
     <th>Ends at</th>
     <th>All day</th>
     <th>Description</th>
-    <th></th>
+    <th>User_id</th>
     <th></th>
     <th></th>
   </tr>
@@ -19,6 +19,7 @@
     <td><%= event.ends_at %></td>
     <td><%= event.all_day %></td>
     <td><%= event.description %></td>
+    <td><%= event.user_id %></td>
     <td><%= link_to 'Show', event %></td>
     <td><%= link_to 'Edit', edit_event_path(event) %></td>
     <td><%= link_to 'Destroy', event, :confirm => 'Are you sure?', :method => :delete %></td>
