@@ -10,7 +10,7 @@ class EventsController < ApplicationController
     @events = Event.scoped  
     @events = @events.after(params['start']) if (params['start'])
     @events = @events.before(params['end']) if (params['end'])
-    
+    @events = Event.where(:user_id => current_user.id)
    # unless params[:user_id].nil?
    #   @user = User.find(params[:user_id])
    # end
@@ -110,7 +110,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to(events_url) }
+      format.html { redirect_to(calendar_index_path) }
       format.xml  { head :ok }
     end
   end
