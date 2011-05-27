@@ -1,29 +1,15 @@
-<%= form_for(@template) do |f| %>
-  <% if @template.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
+<!-- app/views/messages/_form.html.erb -->
+<%=form_for @template do |template_form|%>
+  <div class="field">
+    <%=template_form.label :name%>
 
-      <ul>
-      <% @template.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <%=f.text_field :name%>
+  </div>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <div id="message_conditions">
+    <%template_form.fields_for :exercises do |nested|%>
+      <%=render :partial => 'exercise/exercise', :locals => { :f => nested }%>
+    <%end%>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :user_id %><br />
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%=link_to "Add exercise", '#', :remote => true, :class => :add_template_exercise%>
+<%end%>
