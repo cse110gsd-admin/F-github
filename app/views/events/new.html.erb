@@ -30,7 +30,12 @@
     <%= event_form.text_field :rounds %><br />
   </div>
 
-
+<%= event_form.fields_for :workout do |workout_form| %>
+    <div class="field">
+     <%= workout_form.label "Load from template" %><br />
+     <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+   </div>
+ <% end %>
 
 <!-- bottom -->
  
