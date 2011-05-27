@@ -7,6 +7,9 @@ class Event < ActiveRecord::Base
 
   accepts_nested_attributes_for :workout
 
+  #validates_associated :workout
+
+
   #scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
   #scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
   
@@ -29,4 +32,9 @@ class Event < ActiveRecord::Base
   def self.format_date(date_time)
     Time.at(date_time.to_i).to_formatted_s(:db)
   end
+
+
+
+
+
 end
