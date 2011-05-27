@@ -18,24 +18,33 @@
     </div>
   <% end %>
 
-  </div>
-  <div class="field">
-    <%= event_form.label :starts_at %><br />
-    <%= event_form.datetime_select :starts_at %>
-  </div>
-  <div class="field">
-    <%= event_form.label :ends_at %><br />
-    <%= event_form.datetime_select :ends_at, :default => 1.minutes.from_now %>
-  </div>
+<%= form_for(@workout) do |workout_form| %>
+  <% if @workout.errors.any? %>
+    <div id="error explanation">
+      <h2><%= pluralize(@workout.errors.count, "error") %> Prohibited
+        this workout from being saved:</h2>
 
-  
-  <%= event_form.fields_for :workout do |workout_form| %>
-    <div class="field">
-      <%= workout_form.label "Load from template" %><br />
-      <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+      <ul>
+        <%=@workout.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
+  <div class="field">
+    <%= event_form.label :starts_at %><br />
+    <%= event_form.date_select :starts_at %>
+  </div>
+
+
+
+
+  <div class="field">
+    <%= workout_form.label "Load from template" %><br />
+    <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+  </div>
+  
   <div class="field">
     <%= event_form.label "Rounds" %><br />
     <%= event_form.text_field :rounds %><br />
@@ -47,10 +56,11 @@
   </div>
  
   <div class="actions">
-    <%= event_form.submit %>
+    <%= f.submit %>
   </div>
 
   
 <% end %> <!-- End event_form-->
+<% end %> <!-- End workout_form -->
 <%= link_to 'Back', calendar_index_path %>
 <%= link_to 'Workout Data', new_entry_path(:user_id => current_user.id) %>
