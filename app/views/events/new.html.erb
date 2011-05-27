@@ -18,10 +18,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= event_form.label :starts_at %><br />
-    <%= event_form.datetime_select :starts_at %>
-  </div>
 
   <%= event_form.fields_for :workout do |workout_form| %>
     <div class="field">
