@@ -17,7 +17,7 @@
     <td><%= exercise.weight %></td>
     <td><%= link_to 'Show', exercise %></td>
     <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-    <td><%= link_to 'Destroy', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to ('Delete', exercise, :method => :delete, :class => 'action', :confirm => 'Are you sure?'  %></td>
   </tr>
 <% end %>
 </table>
