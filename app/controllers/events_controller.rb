@@ -11,23 +11,6 @@ class EventsController < ApplicationController
   #  @events = @events.after(params['start']) if (params['start'])
   #  @events = @events.before(params['end']) if (params['end'])
     
-   # unless params[:user_id].nil?
-   #   @user = User.find(params[:user_id])
-   # end
-   # if @user.nil? 
-   #   @events = Event.all
-      #if @entries.nil?
-      #  @entries = Array.new
-      #  @entries[0] = Entry.create(:user_id => )
-      #end
-   # else
-   #   @events = Event.where (:user_id => @user.id)
-      #if @entries.nil?
-      #  @entries = Array.new
-      #  @entries[0] = Entry.create(:user_id => 1) 
-      #end
-   # end
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @events }
@@ -52,7 +35,9 @@ class EventsController < ApplicationController
   def new
     
     @event = Event.new
-    
+    @event.build_workout
+
+
     @templates = Template.where(:user_id => current_user.id).order(:name)
     respond_to do |format|
       format.html # new.html.erb
