@@ -111,7 +111,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(calendar_index_path) }
-      format.xml  { head :ok }
+      format.xml  { head :ok } 
     end
   end
 end
