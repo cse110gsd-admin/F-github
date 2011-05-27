@@ -18,7 +18,17 @@
     </div>
   <% end %>
 
+  </div>
+  <div class="field">
+    <%= event_form.label :starts_at %><br />
+    <%= event_form.datetime_select :starts_at %>
+  </div>
+  <div class="field">
+    <%= event_form.label :ends_at %><br />
+    <%= event_form.datetime_select :ends_at, :default => 1.minutes.from_now %>
+  </div>
 
+  
   <%= event_form.fields_for :workout do |workout_form| %>
     <div class="field">
       <%= workout_form.label "Load from template" %><br />
