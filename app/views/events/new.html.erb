@@ -3,8 +3,6 @@
 
 <% @workout = Workout.new %>
 
-
-
 <%= form_for(@event) do |event_form| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -55,9 +53,6 @@
     <%= event_form.time_select :time, :include_seconds => true, :prompt => {:hour => false } %>
   </div>
  
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 
   
 <% end %> <!-- End event_form-->
