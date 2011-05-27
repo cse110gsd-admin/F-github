@@ -8,8 +8,8 @@ class EventsController < ApplicationController
     # this to be starts_at and ends_at to match rails conventions.
     # I'll eventually do that to make the demo a little cleaner.
     @events = Event.scoped  
-    @events = @events.after(params['start']) if (params['start'])
-    @events = @events.before(params['end']) if (params['end'])
+  #  @events = @events.after(params['start']) if (params['start'])
+  #  @events = @events.before(params['end']) if (params['end'])
     
    # unless params[:user_id].nil?
    #   @user = User.find(params[:user_id])
