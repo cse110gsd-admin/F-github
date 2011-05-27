@@ -3,8 +3,6 @@
 <!-- top -->
 <%@event.attributes = { :all_day => true, :user_id => current_user.id } %>
 
-<% @workout = Workout.new %>
-
 
 
 
@@ -24,10 +22,10 @@
 
 
 <!-- middle -->
-<div class="field">
+  <div class="field">
     <%= event_form.label :starts_at %><br />
     <%= event_form.date_select :starts_at %>
-</div>
+  </div>
 
   
   <div class="field">
@@ -37,8 +35,8 @@
 
   <%= event_form.fields_for :workout do |workout_form| %>
     <div class="field">
-     <%= workout_form.label "Load from template" %><br />
-     <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+     <%= workout_form.label "Name:" %><br />
+     <%= workout_form.text_field :name %>
    </div>
  <% end %>
 
