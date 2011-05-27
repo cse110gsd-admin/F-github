@@ -1,7 +1,4 @@
 <h1>New event</h1>
-<%@event.attributes = { :all_day => true, :user_id => current_user.id } %>
-
-<% @workout = Workout.new %>
 
 <%= form_for(@event) do |event_form| %>
   <% if @event.errors.any? %>
@@ -22,7 +19,7 @@
     <%= event_form.date_select :starts_at %>
   </div>
 
- <!-- cut and paste  -->
+ <!-- workout do cut and paste  -->
   
   <div class="field">
     <%= event_form.label "Rounds" %><br />
