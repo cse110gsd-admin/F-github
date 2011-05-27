@@ -110,11 +110,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-<<<<<<< HEAD
-      format.html { redirect_to(events_url) }
-=======
       format.html { redirect_to(calendar_index_path) }
->>>>>>> origin/master
       format.xml  { head :ok }
     end
   end
