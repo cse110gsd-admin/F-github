@@ -35,6 +35,17 @@
     <%= f.label :user_id %><br />
     <%= f.text_field :user_id %>
   </div>
+
+  <%= f.fields_for :workout do |workout_field| %>
+    <div class="field">
+      <%= workout_field.label "Load from template" %><br />
+      <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+    </div>
+  <% end %>
+
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
