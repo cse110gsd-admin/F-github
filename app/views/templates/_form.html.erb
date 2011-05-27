@@ -8,7 +8,7 @@
 
   <div id="message_conditions">
     <%template_form.fields_for :exercises do |nested|%>
-      <%=render :partial => 'exercise/exercise', :locals => { :f => nested }%>
+      <%=render :partial => 'exercise/exercise', :locals => { :template_form => nested }%>
     <%end%>
   </div>
   <%=link_to "Add exercise", '#', :remote => true, :class => :add_template_exercise%>
