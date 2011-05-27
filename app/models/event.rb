@@ -2,6 +2,7 @@ class Event < ActiveRecord::Base
 
   belongs_to :user
 
+<<<<<<< HEAD
   has_one :workout, :dependent => :destroy
   has_many :warmups, :dependent => :destroy
 
@@ -12,6 +13,13 @@ class Event < ActiveRecord::Base
 
   #scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
   #scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
+=======
+  has_many :workouts, :dependent => :destroy
+  has_many :warmups, :dependent => :destroy
+
+  scope :before, lambda {|end_time| {:conditions => ["ends_at < ?", Event.format_date(end_time)] }}
+  scope :after, lambda {|start_time| {:conditions => ["starts_at > ?", Event.format_date(start_time)] }}
+>>>>>>> origin/master
   
   # need to override the json view to return what full_calendar is expecting.
   # http://arshaw.com/fullcalendar/docs/event_data/Event_Object/
@@ -32,9 +40,12 @@ class Event < ActiveRecord::Base
   def self.format_date(date_time)
     Time.at(date_time.to_i).to_formatted_s(:db)
   end
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> origin/master
 end

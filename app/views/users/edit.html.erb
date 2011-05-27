@@ -2,5 +2,6 @@
 
 <%= render 'form' %>
 
+<%= button_to 'Delete Account', @user, :confirm => 'Are you sure?', :method => :delete %>
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>
