@@ -35,7 +35,7 @@ class EventsController < ApplicationController
   def new
     
     @event = Event.new
-    @event.build_workout
+  #  @event.build_workout
 
 
     @templates = Template.where(:user_id => current_user.id).order(:name)
