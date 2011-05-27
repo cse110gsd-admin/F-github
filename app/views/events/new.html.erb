@@ -3,6 +3,8 @@
 
 <% @workout = Workout.new %>
 
+
+
 <%= form_for(@event) do |event_form| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -17,6 +19,18 @@
   <% end %>
 
   <div class="field">
+    <%= event_form.label :starts_at %><br />
+    <%= event_form.date_select :starts_at %>
+  </div>
+
+  <%= event_form.fields_for :workout do |workout_form| %>
+    <div class="field">
+      <%= workout_form.label "Load from template" %><br />
+      <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+    </div>
+  <% end %>
+
+  <div class="field">
     <%= event_form.label "Rounds" %><br />
     <%= event_form.text_field :rounds %><br />
   </div>
@@ -26,17 +40,10 @@
     <%= event_form.time_select :time, :include_seconds => true, :prompt => {:hour => false } %>
   </div>
  
-<%= event_form.fields_for :workout do |workout_fields| %>
-  <div class="field">
-    <%= workout_fields.label "Load from template" %><br />
-    <%= workout_fields.collection_select :template_id, @templates, :id, :name %>
-  </div>
-<% end %>
-
   <div class="actions">
-    <%= event_form.submit %>
+    <%= f.submit %>
   </div>
-  
+
   
 <% end %> <!-- End event_form-->
 <%= link_to 'Back', calendar_index_path %>
