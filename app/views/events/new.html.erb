@@ -1,10 +1,7 @@
 <h1>New event</h1>
-
-<!-- top -->
 <%@event.attributes = { :all_day => true, :user_id => current_user.id } %>
 
-
-
+<% @workout = Workout.new %>
 
 <%= form_for(@event) do |event_form| %>
   <% if @event.errors.any? %>
@@ -20,30 +17,25 @@
   <% end %>
 
 
-
-<!-- middle -->
-  <div class="field">
-    <%= event_form.label :starts_at %><br />
-    <%= event_form.date_select :starts_at %>
-  </div>
-
+  <%= event_form.fields_for :workout do |workout_form| %>
+    <div class="field">
+     <%= workout_form.label "Load from template" %><br />
+     <%= workout_form.collection_select :template_id, @templates, :id, :name %>
+   </div>
+ <% end %>
   
   <div class="field">
     <%= event_form.label "Rounds" %><br />
     <%= event_form.text_field :rounds %><br />
   </div>
 
-  <%= event_form.fields_for :workout do |workout_form| %>
-    <div class="field">
-     <%= workout_form.label "Name:" %><br />
-     <%= workout_form.text_field :name %>
-   </div>
- <% end %>
-
-<!-- bottom -->
+  <div class="field">    
+    <%= event_form.label "Time to completion" %><br />
+    <%= event_form.time_select :time, :include_seconds => true, :prompt => {:hour => false } %>
+  </div>
  
   <div class="actions">
-    <%= event_form.submit %>
+    <%= f.submit %>
   </div>
 
   
