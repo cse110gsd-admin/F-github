@@ -54,13 +54,13 @@
     <%= event_form.label "Time to completion" %><br />
     <%= event_form.time_select :time, :include_seconds => true, :prompt => {:hour => false } %>
   </div>
- 
+ <% end %> <!-- End event_form-->
+
   <div class="actions">
     <%= event_form.submit %>
   </div>
 
   
-<% end %> <!-- End event_form-->
 <% end %> <!-- End workout_form -->
 <%= link_to 'Back', calendar_index_path %>
 <%= link_to 'Workout Data', new_entry_path(:user_id => current_user.id) %>
