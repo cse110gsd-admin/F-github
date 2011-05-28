@@ -28,7 +28,7 @@ class WorkoutsController < ApplicationController
     # fetches all the crossfit templates ordered by name
     #@templates = Template.where(:user_id => 
     #  User.find_by_name("crossfit").id).order(:name)
-	@templates = Template.where(:user_id => current_user.id).order(:name) 
+	  @templates = Template.where(:user_id => current_user.id).order(:name) 
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workout }
@@ -61,7 +61,7 @@ class WorkoutsController < ApplicationController
     end
     respond_to do |format|
       if @workout.save
-        format.html { redirect_to(@workout, :notice => 'Workout was successfully created.') }
+        format.html { redirect_to(edit_workout_path(@workout), :notice => 'Workout was successfully created.') }
         format.xml  { render :xml => @workout, :status => :created, :location => @workout }
       else
         format.html { render :action => "new" }
