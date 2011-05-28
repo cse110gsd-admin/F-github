@@ -3,6 +3,8 @@ class CreateWarmups < ActiveRecord::Migration
     create_table :warmups do |t|
       t.string :description
       t.integer :entry_id
+      t.integer :event_id
+
 
       t.timestamps
     end

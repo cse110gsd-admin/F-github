@@ -5,6 +5,7 @@ class CreateWorkouts < ActiveRecord::Migration
       t.string :description
       t.integer :entry_id
       t.integer :template_id
+      t.integer :event_id
 
       t.timestamps
     end

@@ -1,15 +1,41 @@
-<!-- app/views/messages/_form.html.erb -->
-<%=form_for @template do |template_form|%>
+<%= nested_form_for @template do |f| %>
+  <% if @template.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@template.errors.count, "error") %> prohibited this template from being saved:</h2>
+
+      <ul>
+      <% @template.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="field">
-    <%=template_form.label :name%>
-
-    <%=template_form.text_field :name%>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
 
-  <div id="message_conditions">
-    <%template_form.fields_for :exercises do |nested|%>
-      <%=render :partial => 'exercise/exercise', :locals => { :template_form => nested }%>
-    <%end%>
+  <%= f.fields_for :exercises do |exercise_form| %>
+    <%= exercise_form.label :name, "Exercise" %><br />
+    <%= exercise_form.text_field :name %>   
+    <%= exercise_form.link_to_remove "Remove this exercise" %>
+  <% end %>
+  <%= f.link_to_add "Add an exercise", :exercises %>
+
+
+
+  <div class="field">
+    <%= f.label :description, "Comments" %><br />
+    <%= f.text_field :description %>
   </div>
-  <%=link_to "Add exercise", '#', :remote => true, :class => :add_template_exercise%>
-<%end%>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+

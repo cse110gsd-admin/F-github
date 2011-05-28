@@ -4,9 +4,13 @@
   <b>Name:</b>
   <%= @template.name %>
 </p>
-
 <p>
-  <b>Description:</b>
+<%= @template.exercises.each do |exercise| %>
+  <%= exercise.name %><br />   
+<% end %>
+</p>
+<p>
+  <b>Comments:</b>
   <%= @template.description %>
 </p>
 

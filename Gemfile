@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.7'
-gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -21,6 +21,7 @@ gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
 # gem 'bj'
 # gem 'nokogiri'
 gem 'sqlite3-ruby', :require => 'sqlite3'
+gem "nested_form", :git => "git://github.com/madebydna/nested_form.git"
 # gem 'aws-s3', :require => 'aws/s3'
 
 # Bundle gems for the local environment. Make sure to

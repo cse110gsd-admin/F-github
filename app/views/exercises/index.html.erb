@@ -15,9 +15,9 @@
     <td><%= exercise.name %></td>
     <td><%= exercise.reps %></td>
     <td><%= exercise.weight %></td>
-    <td><%= link_to 'Show', exercise %></td>
-    <td><%= link_to 'Edit', edit_exercise_path(exercise) %></td>
-    <td><%= link_to 'Destroy', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= button_to 'Show', exercise %></td>
+    <td><%= button_to 'Edit', edit_exercise_path(exercise) %></td>
+    <td><%= button_to 'Destroy', exercise, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20110526085610) do
     t.boolean  "all_day"
     t.text     "description"
     t.integer  "user_id"
+    t.integer  "weight"
     t.integer  "rounds"
-    t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20110526085610) do
   create_table "warmups", :force => true do |t|
     t.string   "description"
     t.integer  "entry_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20110526085610) do
     t.string   "description"
     t.integer  "entry_id"
     t.integer  "template_id"
+    t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
