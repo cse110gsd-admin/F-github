@@ -50,10 +50,9 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.xml
   def new
-    
     @event = Event.new
-    
-    @templates = Template.where(:user_id => current_user.id).order(:name)
+    @event.user_id = current_user.id
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @event }
@@ -69,7 +68,7 @@ class EventsController < ApplicationController
   # POST /events.xml
   def create
     @event = Event.new(params[:event])
-
+    @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to(@event, :notice => 'Event was successfully created.') }
@@ -111,7 +110,7 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to(calendar_index_path) }
-      format.xml  { head :ok } 
+      format.xml  { head :ok }
     end
   end
 end
