@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/madebydna/nested_form.git
+  revision: bce54d4741ef698de7bcdc97cb86010812dbf81f
+  specs:
+    nested_form (0.0.0)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -71,5 +77,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  nested_form!
   rails (= 3.0.7)
   sqlite3-ruby

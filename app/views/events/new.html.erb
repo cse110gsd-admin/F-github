@@ -1,46 +1,6 @@
 <h1>New event</h1>
-<%@event.attributes = { :all_day => true, :user_id => current_user.id } %>
 
-<% @workout = Workout.new %>
+<%= render 'form' %>
 
-<%= form_for(@event) do |event_form| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
-      <ul>
-        <% @event.erros.full.messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-
-  <div class="field">
-    <%= event_form.label :starts_at %><br />
-    <%= event_form.date_select :starts_at %>
-  </div>
-
-  <%= event_form.fields_for @workout do |workout_form| %>
-    <div class="field">
-     <%= workout_form.label "Load from template" %><br />
-     <%= workout_form.collection_select :template_id, @templates, :id, :name %>
-   </div>
- <% end %>
-  
-  <div class="field">
-    <%= event_form.label "Rounds" %><br />
-    <%= event_form.text_field :rounds %><br />
-  </div>
-
-  <div class="actions">
-    <%= event_form.submit %>
-  </div>
-
-  
-
-  
-<% end %> <!-- End workout_form -->
 <%= link_to 'Back', calendar_index_path %>
-<%= link_to 'Workout Data', new_entry_path(:user_id => current_user.id) %>
+<%= link_to 'Workout Data', new_entry_path(:user_id => @current_user.id) %>
