@@ -15,9 +15,9 @@
     <td><%= template.name %></td>
     <td><%= template.description %></td>
     <td><%= template.user_id %></td>
-    <td><%= button_to 'Show', template %></td>
-    <td><%= button_to 'Edit', edit_template_path(template) %></td>
-    <td><%= button_to 'Destroy', template, :confirm => 'Are you sure?', :controller => "template", :method => :delete %></td>
+    <td><%= link_to 'Show', template_path(template) %></td>
+    <td><%= link_to 'Edit', edit_template_path(template) %></td>
+    <!--td><%= link_to 'Destroy', template, :confirm => 'Are you sure?', :controller => "template", :method => :delete %></td-->
   </tr>
 <% end %>
 </table>

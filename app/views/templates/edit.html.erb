@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @template %> |
+<%= button_to 'Destroy', @template, :confirm => 'Are you sure?', :controller => "template", :method => :delete %>
 <%= link_to 'Back', templates_path %>
