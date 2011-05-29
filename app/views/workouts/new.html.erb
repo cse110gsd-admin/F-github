@@ -19,17 +19,6 @@
     <!--%= f.text_field :template_id %-->
   </div>
 
-<%= f.fields_for :exercises do |exercise_form| %>
-    <%= exercise_form.label :name, "Exercise" %><br />
-    <%= exercise_form.text_field :name %><br />
-    <%= exercise_form.label :reps %><br />
-    <%= exercise_form.text_field :reps %><br />
-    <%= exercise_form.label :weight %><br />
-    <%= exercise_form.text_field :weight %><br /
-    <%= exercise_form.link_to_remove "Remove this exercise" %>
-  <% end %>
-  <%= f.link_to_add "Add an exercise", :exercises %>
-
   <div class="field">
     <%= f.hidden_field :event_id %>
   </div>
