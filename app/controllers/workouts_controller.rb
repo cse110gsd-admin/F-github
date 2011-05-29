@@ -59,7 +59,6 @@ class WorkoutsController < ApplicationController
         end
       end
     end
-
     respond_to do |format|
       if @workout.save
         format.html { redirect_to(edit_workout_path(@workout), :notice => 'Workout was successfully created.') }
