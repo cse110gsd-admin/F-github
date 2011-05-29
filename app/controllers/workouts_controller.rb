@@ -14,6 +14,7 @@ class WorkoutsController < ApplicationController
   # GET /workouts/1.xml
   def show
     @workout = Workout.find(params[:id])
+    @template = Template.where(:id => @workout.template_id).first 
 
     respond_to do |format|
       format.html # show.html.erb
