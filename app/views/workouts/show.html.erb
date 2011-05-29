@@ -6,8 +6,10 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @workout.description %>
+  <b>Based on:</b>
+  <%= link_to(@template) do %>
+    <strong><%= @template.name %></strong>
+  <% end %>
 </p>
 
 <p>
