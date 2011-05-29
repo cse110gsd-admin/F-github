@@ -35,7 +35,7 @@
 </p>
 
 <p>
-  <% for exercise in @workout %>
+  <% for @workout.exercises.each do |exercise| %>
     <b>Name:</b>
     <%= exercise.name %>
   </p>
