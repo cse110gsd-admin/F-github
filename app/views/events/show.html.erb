@@ -36,9 +36,21 @@
 
 
 <% @workout.exercises.each do |exercise| %>
-  <p><%= exercise.name %><br />
-     <%= exercise.reps %><br />
-     <%= exercise.weight %><br />
+  <p>
+
+  <% unless exercise.name == nil %>
+     <%= "Exercise:    " %>
+     <%= @exercise.name %><br />
+  <% end %>
+  <% unless exercise.reps == nil %>
+     <%= "Reps: " %>
+     <%= @exercise.reps %><br />
+  <% end %>
+  <% unless exercise.weight == nil %>
+     <%= "Weight:  " %>
+     <%= @exercise.weight %><br />
+  <% end %>
+
   </p>
 <% end %>
 
