@@ -34,21 +34,12 @@
   <%= @workout.id %>
 </p>
 
-<p>
-  <% for @workout.exercises.each do |exercise| %>
-    <b>Name:</b>
-    <%= exercise.name %>
-  </p>
-  <p>
-    <b>Reps:</b>
-    <%= exercise.reps %>
-  </p>
 
-  <p>
-    <b>Weight:</b>
-    <%= exercise.weight %>
+<% @workout.exercises.each do |exercise| %>
+  <p><%= exercise.name %><br />
+     <%= exercise.reps %><br />
+     <%= exercise.weight %><br />
   </p>
-</p>
 <% end %>
 
 
