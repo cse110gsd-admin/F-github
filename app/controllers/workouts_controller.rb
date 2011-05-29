@@ -29,6 +29,8 @@ class WorkoutsController < ApplicationController
     #@templates = Template.where(:user_id => 
     #  User.find_by_name("crossfit").id).order(:name)
 	  @templates = Template.where(:user_id => current_user.id).order(:name) 
+    @workout.event_id = params[:event_id]
+
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @workout }
