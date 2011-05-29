@@ -29,6 +29,11 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <b>Workout:</b>
+  <%= workout.id %>
+</p>
+
 <%= button_to 'Remove', @event, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', calendar_index_path %>
