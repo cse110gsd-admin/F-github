@@ -11,14 +11,20 @@
 </p>
 
 <p>
-  <b>Entry:</b>
-  <%= @workout.entry_id %>
-</p>
-
-<p>
   <b>Template:</b>
   <%= @workout.template_id %>
 </p>
+
+<p>
+  <b>Workout_id:</b>
+  <%= @workout.id %>
+</p>
+
+<p>
+  <b>Event:</b>
+  <%= @workout.event_id %>
+</p>
+
 
 <% @exercises = @workout.exercises %>
 <% @exercises.each do |@exercise| %>
