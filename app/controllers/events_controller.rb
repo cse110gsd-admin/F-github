@@ -29,7 +29,7 @@ class EventsController < ApplicationController
    # end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html { redirect_to "/calendar" }
       format.xml  { render :xml => @events }
       format.js  { render :json => @events }
     end
