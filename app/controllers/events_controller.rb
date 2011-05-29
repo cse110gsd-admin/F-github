@@ -71,7 +71,7 @@ class EventsController < ApplicationController
     @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
-        format.html { redirect_to(new_workout_path(:user_id => @current_user.id), :notice => 'Pick the workout template.') }
+        format.html { redirect_to(new_workout_path(:user_id => @current_user.id, :event_id => @event.id ), :notice => 'Pick the workout template.') }
         format.xml  { render :xml => @event, :status => :created, :location => @event }
       else
         format.html { render :action => "new" }
