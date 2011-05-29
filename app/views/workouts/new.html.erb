@@ -30,6 +30,12 @@
   <% end %>
   <%= f.link_to_add "Add an exercise", :exercises %>
 
+
+  <div class="field">
+    <%= f.label :event_id %><br />
+    <%= f.text_field :event_id %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
