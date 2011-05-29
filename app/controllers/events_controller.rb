@@ -39,9 +39,7 @@ class EventsController < ApplicationController
   # GET /events/1.xml
   def show
     @event = Event.find(params[:id])
-
     @workout = Workout.where (:event_id => @event.id ).first
-
 
     respond_to do |format|
       format.html # show.html.erb
