@@ -29,6 +29,21 @@
   <%= @event.description %>
 </p>
 
+<p>
+  <b>Workout:</b>
+  <%= @workout.name %>
+</p>
+
+
+<% @workout.exercises.each do |exercise| %>
+  <p><%= exercise.name %><br />
+     <%= exercise.reps %><br />
+     <%= exercise.weight %><br />
+  </p>
+<% end %>
+
+
+
 <%= button_to 'Remove', @event, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', calendar_index_path %>
